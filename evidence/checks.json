@@ -1,0 +1,50 @@
+[
+  {
+    "width": 1440,
+    "scrollWidth": 1425,
+    "images": [],
+    "font": true,
+    "videoRequested": false
+  },
+  {
+    "width": 1024,
+    "scrollWidth": 1009,
+    "images": [],
+    "font": true,
+    "videoRequested": false
+  },
+  {
+    "width": 768,
+    "scrollWidth": 753,
+    "images": [],
+    "font": true,
+    "videoRequested": false
+  },
+  {
+    "width": 390,
+    "scrollWidth": 375,
+    "images": [],
+    "font": true,
+    "videoRequested": false
+  },
+  {
+    "width": 320,
+    "scrollWidth": 305,
+    "images": [],
+    "font": true,
+    "videoRequested": false
+  },
+  {
+    "navigation": "open, Escape, link close passed",
+    "faq": "passed",
+    "contact": "passed",
+    "reducedMotion": "passed",
+    "rangeRequests": "passed",
+    "privateFiles": "not served",
+    "playback": {
+      "duration": 42.666667,
+      "time": 0.804353,
+      "width": 1280
+    }
+  }
+]
