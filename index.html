@@ -252,21 +252,17 @@
       </div>
     </section>
 
-    <!-- Signing and security: honest about the signature type. -->
+    <!-- Signing and security: explain the signature type without a warning treatment. -->
     <section id="security" class="security">
       <div class="wrap">
         <div class="section-head">
-          <h2>What a Tawqee signature is, and what it isn't.</h2>
-          <p>Know what you're getting before you decide which documents to route through it.</p>
+          <h2>How Tawqee handles signatures.</h2>
+          <p>A visible signature and an activity record for internal workflows.</p>
         </div>
 
-        <aside class="notice" aria-labelledby="notice-title">
-          <svg class="notice-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5 2.5 20h19L12 3.5z"/><path d="M12 10v4.5M12 17.2v.3"/></svg>
-          <div>
-            <h3 id="notice-title">Tawqee doesn't use certificate-based signatures</h3>
-            <p>Tawqee places a visible signature on the PDF and records who signed, when, and what they agreed to. It doesn't apply a cryptographic certificate (PKI) signature, so PDF readers won't show the file as digitally signed or certified, and Tawqee makes no legal-validity claim.</p>
-            <p><strong>Use it for</strong> internal approvals and everyday documents such as letters, requisitions and sign-offs. For contracts that need legal assurance, or signers outside your organisation, use a certificate-based e-signature service.</p>
-          </div>
+        <aside class="signing-note" aria-labelledby="signing-note-title">
+          <h3 id="signing-note-title">About signatures</h3>
+          <p>Tawqee adds a visible signature to the PDF and records the signer's SharePoint account, accepted consent and app-recorded time. It does not add a certificate-based PDF signature or claim compliance with a specific signing standard. Use it for internal workflows where this method meets your organisation's requirements; choose a suitable signing provider when stronger verification is needed.</p>
         </aside>
 
         <div class="safeguards">
@@ -301,7 +297,7 @@
         </div>
 
         <div class="compare">
-          <h3 id="compare-title">Tawqee or a certificate-based e-signature service?</h3>
+          <h3 id="compare-title">Choosing the right signing method</h3>
           <div class="table-scroll" role="region" aria-labelledby="compare-title" tabindex="0">
             <table>
               <thead><tr><th scope="col"><span class="sr-only">Question</span></th><th scope="col">Tawqee</th><th scope="col">Certificate-based service</th></tr></thead>
@@ -310,8 +306,8 @@
                 <tr><th scope="row">Who can sign</th><td>People in your organisation</td><td>Often anyone with an email address</td></tr>
                 <tr><th scope="row">Approval routing</th><td>Ordered approve and sign stages, with routes locked per document type</td><td>Varies by provider</td></tr>
                 <tr><th scope="row">The signature</th><td>A visible signature with an activity record</td><td>A cryptographic signature that PDF readers can verify</td></tr>
-                <tr><th scope="row">Legal assurance</th><td>None claimed</td><td>Depends on the provider and the certificate</td></tr>
-                <tr><th scope="row">Best for</th><td>Internal approvals and everyday documents</td><td>Contracts and regulated agreements</td></tr>
+                <tr><th scope="row">Signing standard</th><td>No certificate-backed signature</td><td>Depends on the provider and service selected</td></tr>
+                <tr><th scope="row">Best for</th><td>Internal workflows where this method is accepted</td><td>Documents requiring stronger verification</td></tr>
               </tbody>
             </table>
           </div>
@@ -328,7 +324,7 @@
         <div class="faq-list">
           <details><summary>Does Tawqee run inside SharePoint?</summary><p>Yes. Tawqee is a SharePoint Framework web part added to a page on your organisation's SharePoint site. This website introduces the product; your team uses the app in SharePoint.</p></details>
           <details><summary>Where are documents stored?</summary><p>Requests, tasks and files are stored in SharePoint lists and a document library in your site. To place a signature, the PDF is sent to a dedicated PDF service that stamps it and returns it. The result is saved back to SharePoint, and the service keeps nothing.</p></details>
-          <details><summary>Is a Tawqee signature legally binding?</summary><p>Tawqee makes no legal-validity claim. It isn't certificate-based signing: it applies a visible signature with an activity record, suited to internal approvals and everyday documents. <a href="#security">See what's recorded, and the limits.</a></p></details>
+          <details><summary>Is a Tawqee signature legally binding?</summary><p>Tawqee does not claim compliance with a specific signing standard. Whether its visible signature and activity record suit a document depends on your organisation's requirements and applicable law. <a href="#security">See how signing works and what is recorded.</a></p></details>
           <details><summary>Can people outside our organisation sign?</summary><p>No. Participants are internal users of your organisation. Guest and external signing aren't included.</p></details>
           <details><summary>Can we fix the approval route for certain documents?</summary><p>Yes. Site owners create document types from roles such as Finance Head or CFO. A requester picks the type, and the route is filled in and locked. Requesters can still choose General to build their own route.</p></details>
           <details><summary>Does every request need a signature?</summary><p>No. A route can be approvals only, and it completes without changing the PDF.</p></details>

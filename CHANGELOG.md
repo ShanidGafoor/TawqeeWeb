@@ -2,6 +2,7 @@
 
 ## 2026-10-01
 
+- Shortened the signature-scope copy and changed its amber alert panel to a compact neutral note. Aligned the comparison table and legal FAQ with the narrower claims.
 - Redesigned the website. The hero now shows an animated approval route (two approvals, then a signature), the layout borrows SignWell's feature-tab structure, and the copy leads with approvals.
 - Added an Approval types section with tabs for per-request routes, locked document types built from roles, Approve stages, Sign stages, and changes and revisions.
 - Added a Signing and security section: a notice that Tawqee is not certificate-based signing, what is recorded and checked, known limits, and a comparison with certificate-based e-signature services.

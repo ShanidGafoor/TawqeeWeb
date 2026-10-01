@@ -2,12 +2,12 @@
 
 ## Brief (2026-10-01 redesign)
 
-Redesign the Tawqee by ForgRise website completely, using SignWell as inspiration for structure. Position Tawqee as SharePoint-first and approval-first, include its features and the security of its signatures, and clearly warn that it is not certificate-based signing and is meant for everyday documents. Use `assets/tawqee-modern.mp4` as the demo.
+Redesign the Tawqee by ForgRise website completely, using SignWell as inspiration for structure. Position Tawqee as SharePoint-first and approval-first, include its features and explain the scope of its signatures in a calm, concise way. Use `assets/tawqee-modern.mp4` as the demo.
 
 ## What was borrowed from SignWell, and what wasn't
 
 - Borrowed: a direct value statement with the product in view, feature tabs where each tab shows its own product view, a dedicated security section, and a comparison table.
-- Not borrowed: customer logos, award badges, ratings, testimonials and usage statistics. Tawqee has none, and inventing them would be false. Compliance badges are replaced by an honest notice that this is not certificate-based signing, and the comparison table helps visitors choose Tawqee or a certificate-based service.
+- Not borrowed: customer logos, award badges, ratings, testimonials and usage statistics. Tawqee has none, and inventing them would be false. A concise note explains that its signatures are visible rather than certificate-based; the comparison table helps visitors choose a signing method.
 
 ## Palette
 
@@ -16,7 +16,6 @@ Redesign the Tawqee by ForgRise website completely, using SignWell as inspiratio
 - Paper `#FFFFFF` and Mist `#EEF2F8`: surfaces and alternating sections.
 - Signature blue `#2563EB`: Sign stages and primary actions (logo blue).
 - Approval teal `#0F8A6C`: Approve stages and completion.
-- Caution amber `#7A4A00` on `#FFF6E3`: used only for the signing-type notice.
 
 Colour carries meaning: teal is Approve, blue is Sign, the same split as the app's stage colours.
 
@@ -39,7 +38,7 @@ Approval types heading           explanation
 Features: 8 items in a ruled 4-column list (no cards)
 --------------------------------------------------------------------
 Signing and security heading
-[ amber notice: not certificate-based ]
+[ short ruled note: signature scope ]
 Recorded | Checked | Limits
 Comparison table
 --------------------------------------------------------------------
@@ -62,3 +61,4 @@ Content is left-aligned throughout. Numbers appear only where content is a seque
 - First pass: the route connector ran past the last stop. It was rebuilt as per-stop segments.
 - On mobile, stage rows squeezed names onto two lines; the Approve/Sign switch now moves below the name.
 - Checked in local headless Chromium at 1440 and 390 px (full-page) and with the tabs switched; no horizontal overflow at 1440, 1024, 768, 390 or 320 px.
+- The signing-scope copy became a short ruled note; the amber warning icon and large alert panel were removed.
