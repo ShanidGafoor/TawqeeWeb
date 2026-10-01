@@ -37,14 +37,15 @@
   {
     "navigation": "open, Escape, link close passed",
     "faq": "passed",
+    "tabs": "click and arrow keys passed",
     "contact": "passed",
     "reducedMotion": "passed",
     "rangeRequests": "passed",
     "privateFiles": "not served",
     "playback": {
-      "duration": 42.666667,
-      "time": 0.804353,
-      "width": 1280
+      "duration": 52,
+      "time": 0.76302,
+      "width": 1920
     }
   }
 ]

@@ -42,18 +42,18 @@ If the domain changes, update `index.html`, `robots.txt`, and `sitemap.xml` toge
 
 - `index.html`: content, links, metadata and structured data.
 - `styles.css`: responsive layout, local font and reduced-motion support.
-- `script.js`: mobile navigation, demo playback and footer year.
+- `script.js`: mobile navigation, approval-type tabs, demo playback with chapter seeking, and the footer year.
 - `assets/`: local logo, optimized stills, 1280px demo video, captions, font and its license.
 - `tools/`: dependency-free preview, build, content checks, optional browser checks and media optimization.
 - `evidence/`: locally captured desktop/mobile screenshots and browser results. Not copied to the public build.
 
 ## Media and provenance
 
-The logo comes from `Tawqee/assets/branding/tawqee-logo-v1.png`. The supplied Remotion walkthrough and stills come from `tawqee-video/out`. These are illustrative product scenes with fictional data, not evidence of production deployment. The HTML hero and small workflow diagrams are illustrative.
+The logo comes from `Tawqee/assets/branding/tawqee-logo-v1.png`. The demo video is a Remotion walkthrough with fictional data, not evidence of production deployment. The hero route and the approval-type panels are HTML illustrations with example names.
 
-The supplied 1920px MP4 was encoded at 1280px using H.264, CRF 25 and fast-start metadata: 12,907,446 bytes to approximately 2,166,127 bytes. It is 42.67 seconds long. Playback uses native controls and `preload="none"`. No autoplay on page load. Still images use WebP. Plus Jakarta Sans is self-hosted under the included SIL Open Font License.
+The demo is the supplied `assets/tawqee-modern.mp4`, used as delivered: 1920×1080 H.264 with an AAC audio track, 52 seconds, 7,305,459 bytes. It has not been re-encoded. Playback uses native controls and `preload="none"`, with no autoplay on page load. Chapter buttons load the video only when someone clicks one. The poster `demo-poster.webp` is the frame at 3.5 seconds. The captions in `demo.vtt` carry the video's on-screen text with approximate times; whether the audio contains speech was not checked. Still images use WebP. Plus Jakarta Sans is self-hosted under the included SIL Open Font License.
 
-For a future media refresh, set `BROWSER_PATH` to Chrome/Chromium, `MEDIA_SOURCE` to the directory containing the source stills and `LOGO_SOURCE` to the source PNG, then run `node tools/optimize-media.mjs`. It resizes/compresses the existing artwork; it does not generate replacements. Video encoding is a separate step.
+For a future media refresh, set `BROWSER_PATH` to Chrome/Chromium, `MEDIA_SOURCE` to the directory containing the source stills and `LOGO_SOURCE` to the source PNG, then run `node tools/optimize-media.mjs`. It resizes/compresses the logo and social image; it does not generate replacements. The demo poster is a frame taken from the video at 3.5 seconds. Video encoding is a separate step.
 
 ## Optional browser verification
 
@@ -64,8 +64,8 @@ $env:BROWSER_PATH = 'D:\Projects\Learning\tawqee-video\node_modules\.remotion\ch
 node tools/browser-check.mjs
 ```
 
-The check starts its own local server on port 4175 and an isolated headless browser, then closes both. It checks five viewport sizes, local images/font, deferred video loading, navigation, FAQs, mail links, reduced motion, MP4 range requests and actual playback. Screenshots and results are saved under `evidence/`. These are local browser checks, not a Lighthouse score or a live SharePoint test.
+The check starts its own local server on port 4175 and an isolated headless browser, then closes both. It checks five viewport sizes, local images/font, deferred video loading, navigation, FAQs, approval-type tabs (click and arrow keys), mail links, reduced motion, MP4 range requests and actual playback. Screenshots and results are saved under `evidence/`. These are local browser checks, not a Lighthouse score or a live SharePoint test.
 
 ## Product claims
 
-Copy is based on Tawqee's `docs/requirements.md`, `docs/architecture.md`, `docs/ui-design.md`, and `STATUS.md` as inspected on 30 September 2026. The app runs within SharePoint, stores business data there, and sends PDF bytes to a dedicated processing service. Current scope is internal users. English/Arabic support applies to the end-user UI; admin diagnostics and document-type screens are English-only. The FAQ states that production authentication and pilot hardening are unfinished. No certification, tamper-proof audit, Microsoft affiliation, adoption figures, or legal-validity claims are made.
+Copy is based on Tawqee's `docs/requirements.md`, `docs/signing-and-audit.md`, `docs/permissions.md`, `docs/workflow-engine.md`, `docs/pdf-api.md`, ADR 0010 and `STATUS.md` as inspected on 1 October 2026. The app runs within SharePoint, stores business data there, and sends PDF bytes to a dedicated processing service. Current scope is internal users. English/Arabic support applies to the end-user UI; admin diagnostics and document-type screens are English-only. The FAQ states that production authentication and pilot hardening are unfinished. The Signing and security section states that Tawqee is not certificate-based signing. No certification, tamper-proof audit, Microsoft affiliation, adoption figures, testimonials, or legal-validity claims are made.

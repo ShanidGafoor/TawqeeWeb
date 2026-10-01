@@ -41,15 +41,20 @@ try{
  assert(await browser.evaluate(`document.querySelector('.menu-toggle').getAttribute('aria-expanded')==='false'`));
  await browser.evaluate(`document.querySelector('.faq-list summary').click()`);
  assert(await browser.evaluate(`document.querySelector('.faq-list details').open`));
+ await browser.evaluate(`document.querySelector('#tab-sign').click()`);
+ assert(await browser.evaluate(`!document.querySelector('#panel-sign').hidden && document.querySelector('#panel-general').hidden && document.querySelector('#tab-sign').getAttribute('aria-selected')==='true'`),'Approval tabs switch panels');
+ await browser.evaluate(`document.querySelector('#tab-sign').focus()`);
+ await browser.command('Input.dispatchKeyEvent',{type:'keyDown',key:'ArrowDown',code:'ArrowDown'});
+ assert(await browser.evaluate(`document.activeElement.id==='tab-revise' && !document.querySelector('#panel-revise').hidden`),'Arrow keys move between tabs');
  const contacts=await browser.evaluate(`[...document.querySelectorAll('a[href^="mailto:"]')].every(a=>a.href.startsWith('mailto:sales@forgrise.com'))`);assert(contacts);
  await browser.command('Emulation.setEmulatedMedia',{features:[{name:'prefers-reduced-motion',value:'reduce'}]});
  assert.equal(await browser.evaluate(`getComputedStyle(document.documentElement).scrollBehavior`),'auto');
- const range=await fetch(address+'/assets/tawqee-demo.mp4',{headers:{Range:'bytes=0-99'}});assert.equal(range.status,206);assert.equal((await range.arrayBuffer()).byteLength,100);
+ const range=await fetch(address+'/assets/tawqee-modern.mp4',{headers:{Range:'bytes=0-99'}});assert.equal(range.status,206);assert.equal((await range.arrayBuffer()).byteLength,100);
  assert.equal((await fetch(address+'/package.json')).status,404);
- assert.equal((await fetch(address+'/assets/tawqee-demo.mp4',{headers:{Range:'bytes=999999999-'}})).status,416);
+ assert.equal((await fetch(address+'/assets/tawqee-modern.mp4',{headers:{Range:'bytes=999999999-'}})).status,416);
  const playback=await browser.evaluate(`(async()=>{const v=document.querySelector('video');v.muted=true;await v.play();await new Promise(r=>setTimeout(r,800));const result={duration:v.duration,time:v.currentTime,width:v.videoWidth};v.pause();return result;})()`);
- assert(playback.time>0&&playback.width>0,'Video plays');assert(Math.abs(playback.duration-42.6667)<1);
- report.push({navigation:'open, Escape, link close passed',faq:'passed',contact:'passed',reducedMotion:'passed',rangeRequests:'passed',privateFiles:'not served',playback});
+ assert(playback.time>0&&playback.width>0,'Video plays');assert(Math.abs(playback.duration-52)<1);
+ report.push({navigation:'open, Escape, link close passed',faq:'passed',tabs:'click and arrow keys passed',contact:'passed',reducedMotion:'passed',rangeRequests:'passed',privateFiles:'not served',playback});
  await writeFile(path.join(evidence,'checks.json'),JSON.stringify(report,null,2));
  console.log(JSON.stringify(report,null,2));
 }finally{if(browser)await browser.close();server.kill();}

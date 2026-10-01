@@ -1,12 +1,14 @@
 # Status
 
-Updated: 30 September 2026
+Updated: 1 October 2026
 
 ## Current milestone
 
-Product website — local implementation complete.
+Product website redesign (2026-10-01): local implementation complete, awaiting the user's review.
 
 ## Delivered
+
+- 2026-10-01 redesign (DESIGN.md): animated approval-route hero, demo with chapter buttons (`tawqee-modern.mp4`, 52 s), Approval types tabs, features list, Signing and security section with the not-certificate-based notice and a comparison table, updated FAQs.
 
 - Responsive product page with Tawqee logo, illustrative signature workflow, supplied demo, feature sections, SharePoint explanation, FAQs and demo enquiries.
 - Contact: sales@forgrise.com. Planned domain: https://tawqee.forgrise.com/.
@@ -16,11 +18,13 @@ Product website — local implementation complete.
 
 ## Evidence
 
+- LOCAL 2026-10-01: `npm run check`, `node tools/browser-check.mjs` (now also checks the approval tabs, by click and arrow keys, and the 52-second video) and `npm run build` passed.
+
 - LOCAL: Node 22.15.0; `node tools/check.mjs` passed.
 - LOCAL: `node tools/browser-check.mjs` passed with the installed Chromium headless shell.
 - Viewports: 1440, 1024, 768, 390 and 320 CSS pixels; no horizontal overflow, local font loaded, no broken loaded images, no MP4 request on initial load.
 - Mobile navigation: open, Escape and link-close checks passed. FAQs, sales email links and reduced-motion behavior passed.
-- Video: duration 42.666667 seconds, 1280px picture, playback advanced. Byte-range response and invalid-range refusal passed.
+- Video (2026-10-01): duration 52 seconds, 1920px picture, playback advanced. Byte-range response and invalid-range refusal passed.
 - Build is verified when copied into the final destination; see final session entry below.
 - `evidence/desktop.png`, `evidence/mobile.png`, `evidence/checks.json` record local results.
 - MOCK: supplied demo and page illustrations show fictional product examples. No live tenant checks or production deployment were performed.
@@ -33,7 +37,7 @@ Product website — local implementation complete.
 
 ## Exactly one next task
 
-Review the finished local website before selecting a hosting provider for deployment to tawqee.forgrise.com.
+Review the redesigned site locally (`npm start`) and confirm the copy, especially the signing notice, before choosing a host for tawqee.forgrise.com.
 
 ## Final session entry
 30 September 2026: copied to D:\Projects\Learning\TawqeeWeb. npm run check and npm run build both exited 0 in this directory. dist contains the deployable site. No packages installed or deployment performed.

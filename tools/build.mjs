@@ -1,8 +1,9 @@
-import { cp, mkdir, writeFile } from 'node:fs/promises';
+import { cp, mkdir, rm, writeFile } from 'node:fs/promises';
 import { fileURLToPath } from 'node:url';
 import path from 'node:path';
 const root = fileURLToPath(new URL('../', import.meta.url));
 const out = path.join(root, 'dist');
+await rm(out, { recursive: true, force: true });
 await mkdir(out, { recursive: true });
 for (const name of ['index.html', 'styles.css', 'script.js', 'robots.txt', 'sitemap.xml', 'assets']) {
   await cp(path.join(root, name), path.join(out, name), { recursive: true });
